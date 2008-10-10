@@ -3,7 +3,7 @@
 <repository name='file:/C:/Projects/Java/com.aqua.wikiwizardsite/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1223629265046'/>
+    <property name='p2.timestamp' value='1223630181859'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
