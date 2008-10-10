@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature url="features/wikiexport_1.0.0.jar" id="wikiexport" version="1.0.0"/>
+   <category-def name="JSystem" label="JSystem">
+      <description>
+         JSystem utility plugin
+      </description>
+   </category-def>
 </site>
