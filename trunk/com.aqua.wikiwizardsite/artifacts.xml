@@ -3,14 +3,14 @@
 <repository name='file:/C:/Projects/Java/com.aqua.wikiwizardsite/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1223631134000'/>
+    <property name='p2.timestamp' value='1223631675562'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
     <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
     <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
   </mappings>
-  <artifacts size='4'>
+  <artifacts size='2'>
     <artifact classifier='osgi.bundle' id='com.aqua.wikiwizard' version='1.0.0'>
       <properties size='3'>
         <property name='artifact.size' value='16631'/>
@@ -20,20 +20,8 @@
     </artifact>
     <artifact classifier='org.eclipse.update.feature' id='wikiexport' version='1.0.0'>
       <properties size='2'>
-        <property name='artifact.size' value='716'/>
-        <property name='download.size' value='716'/>
-      </properties>
-    </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='wikiexport' version='1.0.0'>
-      <properties size='2'>
-        <property name='artifact.size' value='1102'/>
-        <property name='download.size' value='1102'/>
-      </properties>
-    </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='wikiexport' version='1.0.0'>
-      <properties size='2'>
-        <property name='artifact.size' value='1024'/>
-        <property name='download.size' value='1024'/>
+        <property name='artifact.size' value='1103'/>
+        <property name='download.size' value='1103'/>
       </properties>
     </artifact>
   </artifacts>
