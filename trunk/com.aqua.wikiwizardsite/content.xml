@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?metadataRepository class='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'?>
-<repository name='file:/C:/Projects/Java/com.aqua.wikiwizardsite/ - metadata' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
+<repository name='http://wikiexportplugin.googlecode.com' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1223630181859'/>
+    <property name='p2.timestamp' value='1223631134015'/>
   </properties>
+  <references size='2'>
+    <repository url='http://wikiexportplugin.googlecode.com/svn/trunk/com.aqua.wikiwizardsite' type='0' options='0'/>
+    <repository url='http://wikiexportplugin.googlecode.com/svn/trunk/com.aqua.wikiwizardsite' type='1' options='0'/>
+  </references>
   <units size='8'>
     <unit id='wikiexport.feature.group' version='1.0.0' singleton='false'>
       <update id='wikiexport.feature.group' range='[0.0.0,1.0.0)' severity='0'/>
@@ -28,12 +32,12 @@
       </requires>
       <touchpoint id='null' version='0.0.0'/>
       <licenses size='1'>
-        <license url='http://www.example.com/license'>
-          [Enter License Description here.]
+        <license>
+          Copyright 2008, AQUA Software&#xA;&#x9;      Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#xA;&#x9;      you may not use this file except in compliance with the License.&#xA;&#x9;      You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0&#xA;&#x9;      Unless required by applicable law or agreed to in writing, software&#xA;&#x9;      distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xA;&#x9;      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xA;&#x9;      See the License for the specific language governing permissions&#xA;&#x9;      and limitations under the License.
         </license>
       </licenses>
-      <copyright url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
+      <copyright>
+        Copyright 2008, AQUA Software
       </copyright>
     </unit>
     <unit id='tooling.source.default' version='1.0.0' singleton='false'>
@@ -90,12 +94,12 @@
         </instructions>
       </touchpointData>
       <licenses size='1'>
-        <license url='http://www.example.com/license'>
-          [Enter License Description here.]
+        <license>
+          Copyright 2008, AQUA Software&#xA;&#x9;      Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#xA;&#x9;      you may not use this file except in compliance with the License.&#xA;&#x9;      You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0&#xA;&#x9;      Unless required by applicable law or agreed to in writing, software&#xA;&#x9;      distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xA;&#x9;      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xA;&#x9;      See the License for the specific language governing permissions&#xA;&#x9;      and limitations under the License.
         </license>
       </licenses>
-      <copyright url='http://www.example.com/copyright'>
-        [Enter Copyright Description here.]
+      <copyright>
+        Copyright 2008, AQUA Software
       </copyright>
     </unit>
     <unit id='tooling.osgi.bundle.default' version='1.0.0' singleton='false'>
