@@ -28,7 +28,7 @@
    </license>
 
    <url>
-      <update label="http://wikiexportplugin.googlecode.com" url="http://wikiexportplugin.googlecode.com/svn/trunk/com.aqua.wikiwizardsite"/>
+      <update label="http://wikiexportplugin.googlecode.com/svn/trunk/com.aqua.wikiwizardsite" url="http://wikiexportplugin.googlecode.com/svn/trunk/com.aqua.wikiwizardsite"/>
    </url>
 
    <plugin
