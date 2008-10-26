@@ -17,6 +17,9 @@
 package com.aqua.wikiwizard;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jdt.core.IJavaElement;
@@ -39,7 +42,10 @@ public class WikiExportModel {
 	private Formater formater;
 
 	public WikiExportModel(Formater formater) throws Exception {
+		// Get all the types
 		resultsList = getOptionalTypes();
+		// Sort the list
+		sort();
 		this.formater = formater;
 	}
 	
@@ -158,11 +164,50 @@ public class WikiExportModel {
 	}
 
 	/**
+	 * Sorts the list alphabetically 
+	 */
+	private void sort() {
+		Collections.sort(resultsList, new Comparator<IType>() {
+
+            public int compare(IType t1, IType t2) {
+            	IMember member1 = (IMember)t1;
+            	IMember member2 = (IMember)t2;
+            	
+                String name1 = member1.getElementName();
+                String name2 = member2.getElementName();
+                
+                return name1.compareTo(name2);
+            }});
+	}
+	
+	/**
 	 * Returns the matching results
 	 * 
 	 * @return ArrayList containing strings
 	 */
 	public ArrayList<IType> getObjects() {
 		return resultsList;
+	}
+	
+	/**
+	 * Returns first index of the item that starts with the given letter.
+	 * If there was no match found, return -1.
+	 * @param letter
+	 * 			String letter for the match
+	 * @return
+	 * 			integer index or -1 in case of failure
+	 */
+	public int getObjectByLetter(String letter) {
+		int retVal = -1;
+		
+		for (int i = 0; i < resultsList.size(); i++) {
+			IMember member = (IMember)resultsList.get(i);
+			if (member.getElementName().toLowerCase().startsWith(letter)) {
+				retVal = i;
+				break;
+			}
+		}
+		
+		return retVal;
 	}
 }
