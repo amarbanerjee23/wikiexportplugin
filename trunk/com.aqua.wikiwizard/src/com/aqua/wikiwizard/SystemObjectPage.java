@@ -34,9 +34,6 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.console.ConsolePlugin;
-import org.eclipse.ui.console.IConsole;
-import org.eclipse.ui.console.IOConsole;
 
 /**
  * Represents the first page of the wizard
@@ -128,10 +125,7 @@ public class SystemObjectPage extends WizardPage implements Listener,
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		IOConsole console = new IOConsole("Wiki", null);
-		ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[]{console});
-		console.activate();
-		final WikiExportWizard wizard = (WikiExportWizard) getWizard();
+		WikiExportWizard wizard = (WikiExportWizard) getWizard();
 		int index = wizard.exportModel.getObjectByLetter("" + e.character);
 		if (index != -1) {
 			table.setSelection(index);
