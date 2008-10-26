@@ -135,6 +135,8 @@ public class SystemObjectPage extends WizardPage implements Listener,
 		int index = wizard.exportModel.getObjectByLetter("" + e.character);
 		if (index != -1) {
 			table.setSelection(index);
+			wizard.exportModel.setSelectedMember(wizard.exportModel.
+					getObjects().get(index));
 		}
 	}
 
