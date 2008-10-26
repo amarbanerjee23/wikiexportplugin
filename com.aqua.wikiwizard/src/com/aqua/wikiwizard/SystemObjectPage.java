@@ -23,6 +23,8 @@ import org.eclipse.jface.dialogs.IDialogPage;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FillLayout;
@@ -32,13 +34,16 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.IOConsole;
 
 /**
  * Represents the first page of the wizard
  * @author Guy Arieli, Michael Oziransky
  */
 public class SystemObjectPage extends WizardPage implements Listener,
-		SelectionListener {
+		SelectionListener, KeyListener {
 	public static final String copyright = "(c) Copyright AQUA Software 2008.";
 
 	public IWorkbench workbench;
@@ -77,6 +82,7 @@ public class SystemObjectPage extends WizardPage implements Listener,
 			}
 		});
 		table.addSelectionListener(this);
+		table.addKeyListener(this);
 
 		// Set the composite as the control for this page
 		setControl(composite);
@@ -96,7 +102,9 @@ public class SystemObjectPage extends WizardPage implements Listener,
 		if (packageName == null) {
 			return className;
 		}
-		return packageName + "." + className;
+		
+		// Build the name for easy sorting
+		return className + " - " + packageName + "." + className;
 	}
 
 	/**
@@ -117,4 +125,19 @@ public class SystemObjectPage extends WizardPage implements Listener,
 						.getObjects().get(currentSelection));
 		setPageComplete(true);
 	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		IOConsole console = new IOConsole("Wiki", null);
+		ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[]{console});
+		console.activate();
+		final WikiExportWizard wizard = (WikiExportWizard) getWizard();
+		int index = wizard.exportModel.getObjectByLetter("" + e.character);
+		if (index != -1) {
+			table.setSelection(index);
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {}
 }
