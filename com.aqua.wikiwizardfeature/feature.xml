@@ -2,7 +2,7 @@
 <feature
       id="wikiexport"
       label="Wiki Export Feature"
-      version="1.0.0"
+      version="1.0.1"
       provider-name="AQUA"
       os="linux,win32"
       nl="en">
@@ -35,7 +35,7 @@
          id="com.aqua.wikiwizard"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.0.1"
          unpack="false"/>
 
 </feature>
